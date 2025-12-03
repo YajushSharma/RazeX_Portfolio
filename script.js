@@ -139,10 +139,32 @@ function openVideoModal(videoId) {
 
     // Check if videoId is a URL (YouTube/Vimeo embed)
     if (videoId.startsWith('http')) {
+        let embedUrl = videoId;
+
+        // Handle YouTube URLs
+        if (videoId.includes('youtube.com') || videoId.includes('youtu.be')) {
+            let ytId = '';
+
+            if (videoId.includes('/shorts/')) {
+                // Handle Shorts: youtube.com/shorts/ID
+                ytId = videoId.split('/shorts/')[1].split('?')[0];
+            } else if (videoId.includes('v=')) {
+                // Handle Watch: youtube.com/watch?v=ID
+                ytId = videoId.split('v=')[1].split('&')[0];
+            } else if (videoId.includes('youtu.be/')) {
+                // Handle Short Link: youtu.be/ID
+                ytId = videoId.split('youtu.be/')[1].split('?')[0];
+            }
+
+            if (ytId) {
+                embedUrl = `https://www.youtube.com/embed/${ytId}?autoplay=1`;
+            }
+        }
+
         // It's a video URL - create iframe
         videoPlayer.innerHTML = `
             <iframe 
-                src="${videoId}" 
+                src="${embedUrl}" 
                 frameborder="0" 
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                 allowfullscreen
