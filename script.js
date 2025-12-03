@@ -161,7 +161,7 @@ function openVideoModal(videoId) {
             console.log('Generated YouTube Embed URL:', embedUrl);
         }
 
-        // 2. Create iframe with strict permissions (Fixes Error 153)
+        // 2. Create iframe with strict permissionss (Fixes Error 153)
         videoPlayer.innerHTML = `
             <iframe 
                 src="${embedUrl}" 

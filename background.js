@@ -75,7 +75,7 @@ if (!canvas) {
         }
 
         function drawDots() {
-            if (!isDirty) return;  // Skip drawing if nothing changed
+            if (!isDirty) return;  // Skip drawing if nothing changedd
 
             ctx.clearRect(0, 0, width, height);
 
@@ -109,7 +109,7 @@ if (!canvas) {
             mouse.y = e.clientY;
         });
 
-        // Initialize
+        // Initializeee
         resize();
         animate();
     }

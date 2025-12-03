@@ -291,7 +291,7 @@ body {
     text-align: center;
 }
 
-/* ===== TYPING CURSOR EFFECT ===== */
+/* ===== TYPING CURSOR EFFECTs ===== */
 .textsToType::after {
     content: '|';
     animation: blink 0.7s infinite;
@@ -300,7 +300,7 @@ body {
     /* --- THE FIX IS BELOW --- */
     /* This overrides the transparent text from the parent class */
     -webkit-text-fill-color: var(--color-text-primary) !important;
-    color: var(--color-text-primary) !important;
+    s color: var(--color-text-primary) !important;
 }
 
 @keyframes blink {

@@ -20,7 +20,7 @@ This guide explains how to add your actual videos to the portfolio website.
 In `index.html`, find your video card and update the `data-video` attribute:
 
 ```html
-<!-- BEFORE -->
+<!-- BEFOREe -->
 <div class="video-card" data-video="short-1">
 
 <!-- AFTER -->
