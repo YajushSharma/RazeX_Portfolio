@@ -140,33 +140,35 @@ function openVideoModal(videoId) {
     // Check if videoId is a URL (YouTube/Vimeo embed)
     if (videoId.startsWith('http')) {
         let embedUrl = videoId;
+        let isYouTube = false;
 
-        // Handle YouTube URLs
-        if (videoId.includes('youtube.com') || videoId.includes('youtu.be')) {
-            let ytId = '';
+        // 1. Robust Regex to extract ID from any YouTube URL (Shorts, Watch, Embed, Short-link)
+        // This handles:
+        // - youtube.com/shorts/ID
+        // - youtube.com/watch?v=ID
+        // - youtu.be/ID
+        // - youtube.com/embed/ID
+        // - And ignores extra parameters like &feature=share
+        const ytRegExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
+        const match = videoId.match(ytRegExp);
 
-            if (videoId.includes('/shorts/')) {
-                // Handle Shorts: youtube.com/shorts/ID
-                ytId = videoId.split('/shorts/')[1].split('?')[0];
-            } else if (videoId.includes('v=')) {
-                // Handle Watch: youtube.com/watch?v=ID
-                ytId = videoId.split('v=')[1].split('&')[0];
-            } else if (videoId.includes('youtu.be/')) {
-                // Handle Short Link: youtu.be/ID
-                ytId = videoId.split('youtu.be/')[1].split('?')[0];
-            }
-
-            if (ytId) {
-                embedUrl = `https://www.youtube.com/embed/${ytId}?autoplay=1`;
-            }
+        if (match && match[2].length === 11) {
+            const ytId = match[2];
+            // Add 'rel=0' to not show random videos after finish
+            // Add 'origin' to satisfy CORS requirements
+            embedUrl = `https://www.youtube.com/embed/${ytId}?autoplay=1&rel=0&origin=${window.location.origin}`;
+            isYouTube = true;
+            console.log('Generated YouTube Embed URL:', embedUrl);
         }
 
-        // It's a video URL - create iframe
+        // 2. Create iframe with strict permissions (Fixes Error 153)
         videoPlayer.innerHTML = `
             <iframe 
                 src="${embedUrl}" 
+                title="Video player"
                 frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerpolicy="strict-origin-when-cross-origin"
                 allowfullscreen
                 style="width: 100%; height: 100%; border-radius: 20px;"
             ></iframe>
