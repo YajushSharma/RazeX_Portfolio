@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Professional video editing agency specializing in shorts and long-form content. Transform your ideas into captivating videos.">
+    <title>VideoGenius - Professional Video Editing Agency</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&family=Outfit:wght@300;400;600;700;800;900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <div class="logo-icon">▶</div>
+                <span class="logo-text">VideoGenius</span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#shorts" class="nav-link">Shorts</a></li>
+                <li><a href="#long-form" class="nav-link">Long Form</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#contact" class="nav-link nav-cta" id="contactBtn">Contact Now</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-background">
+            <div class="gradient-orb orb-1"></div>
+            <div class="gradient-orb orb-2"></div>
+            <div class="gradient-orb orb-3"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="badge-icon">✦</span>
+                <span>Trusted by 1000+ Creators</span>
+            </div>
+            <h1 class="hero-title">
+                Transform Your Ideas Into
+                <span class="gradient-text">Viral Videos</span>
+            </h1>
+            <p class="hero-subtitle">
+                Professional video editing for shorts and long-form content that captivates,<br>
+                engages, and drives results. No experience needed—just great ideas.
+            </p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary" id="heroContactBtn">
+                    <span>Get Started</span>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M4 10H16M16 10L11 5M16 10L11 15" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </button>
+                <button class="btn btn-secondary" id="viewWorksBtn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M5 3L19 12L5 21V3Z" fill="currentColor" />
+                    </svg>
+                    <span>View Our Works</span>
+                </button>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-icon">⭐</div>
+                    <div class="stat-info">
+                        <div class="stat-number">15,000+</div>
+                        <div class="stat-label">Videos Created</div>
+                    </div>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <div class="stat-icon">🎬</div>
+                    <div class="stat-info">
+                        <div class="stat-number">500M+</div>
+                        <div class="stat-label">Total Views</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shorts Section -->
+    <section class="shorts-section" id="shorts">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <span>🔥</span>
+                    <span>Shorts Portfolio</span>
+                </div>
+                <h2 class="section-title">
+                    Viral-Ready <span class="gradient-text">Short Videos</span>
+                </h2>
+                <p class="section-subtitle">
+                    Fast-paced, attention-grabbing content designed for TikTok, Instagram Reels, and YouTube Shorts
+                </p>
+            </div>
+
+            <div class="video-grid shorts-grid">
+                <div class="video-card" data-video="short-1">
+                    <div class="video-thumbnail">
+                        <img src="C:/Users/user/.gemini/antigravity/brain/0b9b44ef-f7ef-4ce4-8e95-141198fe5c0c/short_video_1_1764676936515.png"
+                            alt="Short video 1">
+                        <div class="video-overlay">
+                            <div class="play-button">
+                                <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                                    <circle cx="24" cy="24" r="24" fill="rgba(168, 85, 247, 0.2)" />
+                                    <circle cx="24" cy="24" r="20" fill="rgba(168, 85, 247, 0.6)" />
+                                    <path d="M19 15L33 24L19 33V15Z" fill="white" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="video-duration">0:45</div>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">Product Launch Teaser</h3>
+                        <p class="video-stats">2.5M views • Trending</p>
+                    </div>
+                </div>
+
+                <div class="video-card" data-video="short-2">
+                    <div class="video-thumbnail">
+                        <img src="C:/Users/user/.gemini/antigravity/brain/0b9b44ef-f7ef-4ce4-8e95-141198fe5c0c/short_video_2_1764676966482.png"
+                            alt="Short video 2">
+                        <div class="video-overlay">
+                            <div class="play-button">
+                                <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                                    <circle cx="24" cy="24" r="24" fill="rgba(168, 85, 247, 0.2)" />
+                                    <circle cx="24" cy="24" r="20" fill="rgba(168, 85, 247, 0.6)" />
+                                    <path d="M19 15L33 24L19 33V15Z" fill="white" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="video-duration">0:30</div>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">Behind The Scenes</h3>
+                        <p class="video-stats">1.8M views • Viral</p>
+                    </div>
+                </div>
+
+                <div class="video-card" data-video="short-3">
+                    <div class="video-thumbnail">
+                        <img src="C:/Users/user/.gemini/antigravity/brain/0b9b44ef-f7ef-4ce4-8e95-141198fe5c0c/short_video_3_1764676993648.png"
+                            alt="Short video 3">
+                        <div class="video-overlay">
+                            <div class="play-button">
+                                <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                                    <circle cx="24" cy="24" r="24" fill="rgba(168, 85, 247, 0.2)" />
+                                    <circle cx="24" cy="24" r="20" fill="rgba(168, 85, 247, 0.6)" />
+                                    <path d="M19 15L33 24L19 33V15Z" fill="white" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="video-duration">0:58</div>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">Quick Tutorial</h3>
+                        <p class="video-stats">3.2M views • Popular</p>
+                    </div>
+                </div>
+
+                <div class="video-card" data-video="short-4">
+                    <div class="video-thumbnail">
+                        <img src="C:/Users/user/.gemini/antigravity/brain/0b9b44ef-f7ef-4ce4-8e95-141198fe5c0c/short_video_4_1764677010974.png"
+                            alt="Short video 4">
+                        <div class="video-overlay">
+                            <div class="play-button">
+                                <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                                    <circle cx="24" cy="24" r="24" fill="rgba(168, 85, 247, 0.2)" />
+                                    <circle cx="24" cy="24" r="20" fill="rgba(168, 85, 247, 0.6)" />
+                                    <path d="M19 15L33 24L19 33V15Z" fill="white" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="video-duration">0:40</div>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">Brand Story</h3>
+                        <p class="video-stats">1.5M views • Growing</p>
+                    </div>
+                </div>
+
+                <div class="video-card" data-video="short-5">
+                    <div class="video-thumbnail">
+                        <img src="C:/Users/user/.gemini/antigravity/brain/0b9b44ef-f7ef-4ce4-8e95-141198fe5c0c/short_video_5_1764677035053.png"
+                            alt="Short video 5">
+                        <div class="video-overlay">
+                            <div class="play-button">
+                                <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                                    <circle cx="24" cy="24" r="24" fill="rgba(168, 85, 247, 0.2)" />
+                                    <circle cx="24" cy="24" r="20" fill="rgba(168, 85, 247, 0.6)" />
+                                    <path d="M19 15L33 24L19 33V15Z" fill="white" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="video-duration">0:35</div>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">Product Demo</h3>
+                        <p class="video-stats">2.1M views • Hot</p>
+                    </div>
+                </div>
+
+                <div class="video-card" data-video="short-6">
+                    <div class="video-thumbnail">
+                        <img src="C:/Users/user/.gemini/antigravity/brain/0b9b44ef-f7ef-4ce4-8e95-141198fe5c0c/short_video_6_1764677054070.png"
+                            alt="Short video 6">
+                        <div class="video-overlay">
+                            <div class="play-button">
+                                <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                                    <circle cx="24" cy="24" r="24" fill="rgba(168, 85, 247, 0.2)" />
+                                    <circle cx="24" cy="24" r="20" fill="rgba(168, 85, 247, 0.6)" />
+                                    <path d="M19 15L33 24L19 33V15Z" fill="white" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="video-duration">0:52</div>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">Customer Testimonial</h3>
+                        <p class="video-stats">900K views • Rising</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Long Form Section -->
+    <section class="long-form-section" id="long-form">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <span>🎥</span>
+                    <span>Long-Form Content</span>
+                </div>
+                <h2 class="section-title">
+                    In-Depth <span class="gradient-text">Storytelling</span>
+                </h2>
+                <p class="section-subtitle">
+                    Comprehensive video content for YouTube, courses, and premium brand storytelling
+                </p>
+            </div>
+
+            <div class="video-grid long-form-grid">
+                <div class="video-card video-card-large" data-video="long-1">
+                    <div class="video-thumbnail">
+                        <img src="C:/Users/user/.gemini/antigravity/brain/0b9b44ef-f7ef-4ce4-8e95-141198fe5c0c/long_form_1_1764677072920.png"
+                            alt="Long form video 1">
+                        <div class="video-overlay">
+                            <div class="play-button play-button-large">
+                                <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
+                                    <circle cx="32" cy="32" r="32" fill="rgba(168, 85, 247, 0.2)" />
+                                    <circle cx="32" cy="32" r="26" fill="rgba(168, 85, 247, 0.6)" />
+                                    <path d="M26 20L44 32L26 44V20Z" fill="white" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="video-duration">15:42</div>
+                        <div class="video-quality">4K</div>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">Complete Brand Documentary</h3>
+                        <p class="video-description">A comprehensive journey through brand evolution and impact</p>
+                        <p class="video-stats">850K views • 98% satisfaction</p>
+                    </div>
+                </div>
+
+                <div class="video-card video-card-large" data-video="long-2">
+                    <div class="video-thumbnail">
+                        <img src="https://via.placeholder.com/1920x1080/6366f1/ffffff?text=Educational+Course+Trailer"
+                            alt="Long form video 2">
+                        <div class="video-overlay">
+                            <div class="play-button play-button-large">
+                                <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
+                                    <circle cx="32" cy="32" r="32" fill="rgba(168, 85, 247, 0.2)" />
+                                    <circle cx="32" cy="32" r="26" fill="rgba(168, 85, 247, 0.6)" />
+                                    <path d="M26 20L44 32L26 44V20Z" fill="white" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="video-duration">22:18</div>
+                        <div class="video-quality">4K</div>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">Educational Course Trailer</h3>
+                        <p class="video-description">Master-level content with stunning visual storytelling</p>
+                        <p class="video-stats">1.2M views • Top rated</p>
+                    </div>
+                </div>
+
+                <div class="video-card video-card-large" data-video="long-3">
+                    <div class="video-thumbnail">
+                        <img src="https://via.placeholder.com/1920x1080/ec4899/ffffff?text=Product+Launch+Event"
+                            alt="Long form video 3">
+                        <div class="video-overlay">
+                            <div class="play-button play-button-large">
+                                <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
+                                    <circle cx="32" cy="32" r="32" fill="rgba(168, 85, 247, 0.2)" />
+                                    <circle cx="32" cy="32" r="26" fill="rgba(168, 85, 247, 0.6)" />
+                                    <path d="M26 20L44 32L26 44V20Z" fill="white" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="video-duration">18:35</div>
+                        <div class="video-quality">4K</div>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">Product Launch Event</h3>
+                        <p class="video-description">Full event coverage with cinematic production quality</p>
+                        <p class="video-stats">2.5M views • Award winning</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-section" id="why-us">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <span>💡</span>
+                    <span>Why Choose Us</span>
+                </div>
+                <h2 class="section-title">
+                    What Makes Us <span class="gradient-text">Different</span>
+                </h2>
+                <p class="section-subtitle">
+                    We don't just edit videos—we create experiences that captivate and convert
+                </p>
+            </div>
+
+            <div class="why-grid">
+                <div class="why-item">
+                    <div class="why-icon">⚡</div>
+                    <h3 class="why-title">Lightning Fast Delivery</h3>
+                    <p class="why-description">Get your edited videos in 24-48 hours without compromising on quality. We
+                        understand deadlines matter.</p>
+                </div>
+
+                <div class="why-item">
+                    <div class="why-icon">🎨</div>
+                    <h3 class="why-title">Creative Excellence</h3>
+                    <p class="why-description">Award-winning editors with a keen eye for storytelling, pacing, and
+                        visual aesthetics that engage viewers.</p>
+                </div>
+
+                <div class="why-item">
+                    <div class="why-icon">🔄</div>
+                    <h3 class="why-title">Unlimited Revisions</h3>
+                    <p class="why-description">We work until you're 100% satisfied. Your vision is our priority, and
+                        we'll refine until it's perfect.</p>
+                </div>
+
+                <div class="why-item">
+                    <div class="why-icon">💎</div>
+                    <h3 class="why-title">Premium Quality</h3>
+                    <p class="why-description">4K resolution, color grading, sound design, and motion graphics—all
+                        included in our comprehensive service.</p>
+                </div>
+
+                <div class="why-item">
+                    <div class="why-icon">📊</div>
+                    <h3 class="why-title">Data-Driven Approach</h3>
+                    <p class="why-description">We analyze trending content and apply proven techniques to maximize
+                        engagement and viral potential.</p>
+                </div>
+
+                <div class="why-item">
+                    <div class="why-icon">🤝</div>
+                    <h3 class="why-title">Dedicated Support</h3>
+                    <p class="why-description">Direct communication with your editor. No middlemen, just responsive
+                        collaboration throughout the process.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section" id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <span>⭐</span>
+                    <span>Client Reviews</span>
+                </div>
+                <h2 class="section-title">
+                    Trusted by <span class="gradient-text">Creators Worldwide</span>
+                </h2>
+                <p class="section-subtitle">
+                    Don't just take our word for it—here's what our clients say about working with us
+                </p>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <span>⭐</span>
+                        <span>⭐</span>
+                        <span>⭐</span>
+                        <span>⭐</span>
+                        <span>⭐</span>
+                    </div>
+                    <p class="testimonial-text">
+                        "Absolutely phenomenal work! My shorts went from 10K views to over 2M after they edited them.
+                        The pacing, transitions, and effects are on another level. Best investment I've made for my
+                        channel."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">JD</div>
+                        <div class="author-info">
+                            <div class="author-name">Jessica Davis</div>
+                            <div class="author-role">Content Creator • 500K Subscribers</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <span>⭐</span>
+                        <span>⭐</span>
+                        <span>⭐</span>
+                        <span>⭐</span>
+                        <span>⭐</span>
+                    </div>
+                    <p class="testimonial-text">
+                        "They transformed our brand story into a cinematic masterpiece. The attention to detail, color
+                        grading, and storytelling exceeded all expectations. Our conversion rate increased by 150%!"
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">MC</div>
+                        <div class="author-info">
+                            <div class="author-name">Michael Chen</div>
+                            <div class="author-role">Marketing Director • TechFlow Inc.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <span>⭐</span>
+                        <span>⭐</span>
+                        <span>⭐</span>
+                        <span>⭐</span>
+                        <span>⭐</span>
+                    </div>
+                    <p class="testimonial-text">
+                        "Fast, professional, and creative. They delivered my course trailer in 36 hours, and it looks
+                        like it cost $10K to produce. The communication was excellent throughout. Highly recommend!"
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SP</div>
+                        <div class="author-info">
+                            <div class="author-name">Sarah Parker</div>
+                            <div class="author-role">Online Educator • Business Coach</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <span>⭐</span>
+                        <span>⭐</span>
+                        <span>⭐</span>
+                        <span>⭐</span>
+                        <span>⭐</span>
+                    </div>
+                    <p class="testimonial-text">
+                        "These guys are wizards! They took my raw footage and turned it into viral gold. 5 of my last 7
+                        videos hit over 1M views. Their understanding of trends and audience psychology is unmatched."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">RM</div>
+                        <div class="author-info">
+                            <div class="author-name">Ryan Martinez</div>
+                            <div class="author-role">YouTuber • 2M Subscribers</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <span>⭐</span>
+                        <span>⭐</span>
+                        <span>⭐</span>
+                        <span>⭐</span>
+                        <span>⭐</span>
+                    </div>
+                    <p class="testimonial-text">
+                        "Professional, responsive, and incredibly talented. They nailed our vision on the first draft.
+                        The motion graphics and sound design were chef's kiss. We've been working together for 6 months
+                        now!"
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">EL</div>
+                        <div class="author-info">
+                            <div class="author-name">Emily Lopez</div>
+                            <div class="author-role">Brand Manager • FitLife Apparel</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <span>⭐</span>
+                        <span>⭐</span>
+                        <span>⭐</span>
+                        <span>⭐</span>
+                        <span>⭐</span>
+                    </div>
+                    <p class="testimonial-text">
+                        "Worth every penny. The quality is insane, turnaround time is lightning fast, and they truly
+                        care about your success. My engagement skyrocketed after using their services. Can't recommend
+                        enough!"
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">DK</div>
+                        <div class="author-info">
+                            <div class="author-name">David Kim</div>
+                            <div class="author-role">Entrepreneur • Digital Products</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="trust-indicators">
+                <div class="trust-item">
+                    <div class="trust-number">5,000+</div>
+                    <div class="trust-label">Happy Clients</div>
+                </div>
+                <div class="trust-divider"></div>
+                <div class="trust-item">
+                    <div class="trust-number">4.9/5</div>
+                    <div class="trust-label">Average Rating</div>
+                </div>
+                <div class="trust-divider"></div>
+                <div class="trust-item">
+                    <div class="trust-number">99%</div>
+                    <div class="trust-label">Client Retention</div>
+                </div>
+                <div class="trust-divider"></div>
+                <div class="trust-item">
+                    <div class="trust-number">500M+</div>
+                    <div class="trust-label">Total Views Generated</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <div class="section-badge">
+                        <span>✨</span>
+                        <span>About Us</span>
+                    </div>
+                    <h2 class="section-title">
+                        <span class="gradient-text">Expert Editors</span><br>
+                        Bringing Your Vision to Life
+                    </h2>
+                    <p class="about-description">
+                        We're a team of passionate video editors with over 10 years of combined experience creating
+                        viral content for brands, creators, and businesses worldwide. From fast-paced shorts to
+                        cinematic long-form content, we turn raw footage into captivating stories that engage and
+                        convert.
+                    </p>
+                    <div class="about-features">
+                        <div class="feature-item">
+                            <div class="feature-icon">⚡</div>
+                            <div class="feature-text">
+                                <h4>Lightning Fast</h4>
+                                <p>24-48 hour turnaround</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">🎨</div>
+                            <div class="feature-text">
+                                <h4>Creative Excellence</h4>
+                                <p>Award-winning editing</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">💎</div>
+                            <div class="feature-text">
+                                <h4>Premium Quality</h4>
+                                <p>4K and beyond</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-stats-card">
+                    <div class="stats-card-glow"></div>
+                    <div class="stat-row">
+                        <div class="stat-big">
+                            <div class="stat-number-big">10+</div>
+                            <div class="stat-label">Years Experience</div>
+                        </div>
+                        <div class="stat-big">
+                            <div class="stat-number-big">5K+</div>
+                            <div class="stat-label">Happy Clients</div>
+                        </div>
+                    </div>
+                    <div class="stat-row">
+                        <div class="stat-big">
+                            <div class="stat-number-big">500M+</div>
+                            <div class="stat-label">Total Views</div>
+                        </div>
+                        <div class="stat-big">
+                            <div class="stat-number-big">99%</div>
+                            <div class="stat-label">Satisfaction</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-card">
+                <div class="cta-glow"></div>
+                <div class="cta-content">
+                    <h2 class="cta-title">Ready to Go Viral?</h2>
+                    <p class="cta-subtitle">Let's create something amazing together. Get started today with a free
+                        consultation.</p>
+                    <button class="btn btn-primary btn-large" id="ctaContactBtn">
+                        <span>Contact Now</span>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M4 10H16M16 10L11 5M16 10L11 15" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <div class="logo-icon">▶</div>
+                        <span class="logo-text">VideoGenius</span>
+                    </div>
+                    <p class="footer-tagline">Transforming ideas into viral videos</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Services</h4>
+                        <ul>
+                            <li><a href="#shorts">Short Form</a></li>
+                            <li><a href="#long-form">Long Form</a></li>
+                            <li><a href="#about">About</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Contact</h4>
+                        <ul>
+                            <li><a href="mailto:hello@videogenius.com">hello@videogenius.com</a></li>
+                            <li><a href="tel:+1234567890">+1 (234) 567-890</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 VideoGenius. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Contact Modal -->
+    <div class="modal" id="contactModal">
+        <div class="modal-overlay" id="modalOverlay"></div>
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <div class="modal-header">
+                <h2>Let's Create Something Amazing</h2>
+                <p>Fill out the form below and we'll get back to you within 24 hours</p>
+            </div>
+            <form class="contact-form" id="contactForm">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required placeholder="Your name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required placeholder="your@email.com">
+                </div>
+                <div class="form-group">
+                    <label for="service">Service Needed</label>
+                    <select id="service" name="service" required>
+                        <option value="">Select a service</option>
+                        <option value="shorts">Short-Form Videos</option>
+                        <option value="long-form">Long-Form Content</option>
+                        <option value="both">Both</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Project Details</label>
+                    <textarea id="message" name="message" rows="4" required
+                        placeholder="Tell us about your project..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-full">
+                    <span>Send Message</span>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M18 2L9 11M18 2L12 18L9 11M18 2L2 8L9 11" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Video Player Modal -->
+    <div class="modal video-modal" id="videoModal">
+        <div class="modal-overlay" id="videoModalOverlay"></div>
+        <div class="video-modal-content">
+            <button class="modal-close" id="videoModalClose">&times;</button>
+            <div class="video-player">
+                <div class="video-placeholder" id="videoPlayer">
+                    <p>Video player would load here</p>
+                    <p class="video-placeholder-note">In production, this would be replaced with an actual video player
+                        (YouTube, Vimeo, or custom HTML5 player)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
+#
