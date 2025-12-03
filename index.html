@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
         content="Professional video editing agency specializing in shorts and long-form content. Transform your ideas into captivating videos.">
-    <title>VideoGenius - Professional Video Editing Agency</title>
+    <title>RazeX - Professional Video Editing Agency</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mobile-enhancements.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -16,12 +17,19 @@
 </head>
 
 <body>
+    <!-- Global Background -->
+    <div id="global-background">
+        <canvas id="shimmer-canvas"></canvas>
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
+    </div>
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <div class="logo">
                 <div class="logo-icon">▶</div>
-                <span class="logo-text">VideoGenius</span>
+                <span class="logo-text">RazeX</span>
             </div>
             <ul class="nav-menu" id="navMenu">
                 <li><a href="#home" class="nav-link">Home</a></li>
@@ -40,19 +48,15 @@
 
     <!-- Hero Section -->
     <section class="hero" id="home">
-        <div class="hero-background">
-            <div class="gradient-orb orb-1"></div>
-            <div class="gradient-orb orb-2"></div>
-            <div class="gradient-orb orb-3"></div>
-        </div>
+
         <div class="hero-content">
             <div class="hero-badge">
                 <span class="badge-icon">✦</span>
                 <span>Trusted by 1000+ Creators</span>
             </div>
             <h1 class="hero-title">
-                Transform Your Ideas Into
-                <span class="gradient-text">Viral Videos</span>
+                Transform Your Ideas Into <br>
+                <span class="textsToType gradient-text">Viral Videos</span>
             </h1>
             <p class="hero-subtitle">
                 Professional video editing for shorts and long-form content that captivates,<br>
@@ -152,7 +156,7 @@
                     </div>
                 </div>
 
-                <div class="video-card" data-video="short-3">
+                <div class="video-card" data-video="https://youtube.com/shorts/nyIxTKiPh9Q?si=flBNHmXXD2DdvB3G">
                     <div class="video-thumbnail">
                         <img src="C:/Users/user/.gemini/antigravity/brain/0b9b44ef-f7ef-4ce4-8e95-141198fe5c0c/short_video_3_1764676993648.png"
                             alt="Short video 3">
@@ -659,7 +663,7 @@
                 <div class="footer-brand">
                     <div class="logo">
                         <div class="logo-icon">▶</div>
-                        <span class="logo-text">VideoGenius</span>
+                        <span class="logo-text">RazeX</span>
                     </div>
                     <p class="footer-tagline">Transforming ideas into viral videos</p>
                 </div>
@@ -682,7 +686,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 VideoGenius. All rights reserved.</p>
+                <p>&copy; 2024 RazeX. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -746,8 +750,8 @@
         </div>
     </div>
 
+    <script src="background.js"></script>
     <script src="script.js"></script>
 </body>
 
 </html>
-#

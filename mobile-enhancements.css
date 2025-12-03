@@ -1,0 +1,181 @@
+/* Mobile Responsive Fixes and Enhancements */
+
+/* Mobile Navbar - Show all nav items inline, smaller text */
+/* ===== MOBILE NAVBAR OVERRIDES ===== */
+@media (max-width: 968px) {
+
+    /* 1. Hide the Hamburger and Logo Text to save space */
+    .hamburger,
+    .logo-text {
+        display: none !important;
+    }
+
+    /* 2. Adjust the main container */
+    .navbar {
+        padding: 0.5rem;
+        /* Shrink outer padding */
+    }
+
+    .nav-container {
+        padding: 0.5rem 0.75rem;
+        /* Shrink inner padding */
+        justify-content: space-between;
+        /* Space out logo and menu */
+        border-radius: 50px;
+    }
+
+    /* 3. RESET the Nav Menu: Force it to stay horizontal and visible */
+    .nav-menu {
+        display: flex !important;
+        /* Force it to show */
+        flex-direction: row !important;
+        /* Keep items side-by-side */
+        position: static !important;
+        /* Remove it from "floating" off-screen */
+        transform: none !important;
+        /* Remove slide animations */
+        background: transparent !important;
+        /* Remove dark background */
+        width: auto !important;
+        /* Fit content width */
+        height: auto !important;
+        /* Fit content height */
+        box-shadow: none !important;
+        /* Remove shadow */
+        padding: 0 !important;
+        gap: 0.3rem !important;
+        /* Very tight gap between words */
+        opacity: 1 !important;
+        /* Ensure visibility */
+    }
+
+    /* 4. Style the Links for Mobile */
+    .nav-link {
+        font-size: 0.7rem;
+        /* Tiny text (approx 11px) */
+        padding: 0.25rem;
+        /* Minimal padding */
+        white-space: nowrap;
+        /* Prevent "Long Form" from breaking lines */
+    }
+
+    /* 5. Adjust the "Contact Now" button to fit */
+    .nav-cta {
+        padding: 0.35rem 0.75rem !important;
+        font-size: 0.7rem !important;
+        background: var(--gradient-primary);
+        /* Keep the button look */
+    }
+
+    /* Optional: Make logo icon smaller */
+    .logo-icon {
+        width: 28px;
+        height: 28px;
+        font-size: 0.8rem;
+    }
+}
+
+/* Make sure the navbar doesn't break on very small phones (like iPhone SE) */
+@media (max-width: 380px) {
+    .nav-menu {
+        gap: 0.1rem !important;
+        /* Even tighter for tiny screens */
+    }
+
+    .nav-link {
+        font-size: 0.65rem;
+    }
+
+    .nav-cta {
+        padding: 0.3rem 0.6rem !important;
+    }
+}
+
+/* Tablet - keep normal layout */
+@media (min-width: 641px) and (max-width: 968px) {
+    .hamburger {
+        display: none;
+    }
+}
+
+/* Enhanced animated background */
+.gradient-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(120px);
+    opacity: 0.7;
+    animation: float 25s infinite ease-in-out;
+    will-change: transform;
+}
+
+.orb-1 {
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(circle, var(--color-accent-purple), var(--color-accent-pink), transparent);
+    top: -250px;
+    right: -250px;
+    animation: float 20s infinite ease-in-out, pulse 8s infinite ease-in-out;
+}
+
+.orb-2 {
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, var(--color-accent-pink), transparent);
+    bottom: -200px;
+    left: -200px;
+    animation: float 25s infinite ease-in-out, pulse 10s infinite ease-in-out;
+    animation-delay: 7s;
+}
+
+.orb-3 {
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, var(--color-accent-blue), var(--color-accent-purple), transparent);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: float 30s infinite ease-in-out, rotate 40s infinite linear, pulse 12s infinite ease-in-out;
+    animation-delay: 14s;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    25% {
+        transform: translate(100px, -80px) scale(1.15) rotate(90deg);
+    }
+
+    50% {
+        transform: translate(-80px, 100px) scale(0.85) rotate(180deg);
+    }
+
+    75% {
+        transform: translate(80px, 80px) scale(1.1) rotate(270deg);
+    }
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 0.6;
+    }
+
+    50% {
+        opacity: 0.9;
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
