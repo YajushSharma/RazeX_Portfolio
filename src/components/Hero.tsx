@@ -60,7 +60,7 @@ export default function Hero() {
                 }}
             >
                 <Image
-                    src="/hero-bg-bg-4k.png"
+                    src="/hero-bg-bg-4k.webp"
                     alt="Star Background"
                     fill
                     className="object-cover object-center"
@@ -77,7 +77,7 @@ export default function Hero() {
             >
                 <div className="absolute top-1/2 left-0 right-0 h-[200vh] bg-black -z-10" />
                 <Image
-                    src="/hero-bg-circle-4k.png"
+                    src="/hero-bg-circle-4k.webp"
                     alt="Glowing Circle"
                     width={3840}
                     height={3840}

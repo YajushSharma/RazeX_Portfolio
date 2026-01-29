@@ -194,7 +194,7 @@ export default function SpaceshipReveal({ children }: SpaceshipRevealProps) {
                 }}
             >
                 <Image
-                    src="/Space-window.png"
+                    src="/space-window.webp"
                     alt="Spaceship Window"
                     fill
                     className="object-cover object-center"

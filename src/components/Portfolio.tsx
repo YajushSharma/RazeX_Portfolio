@@ -227,10 +227,8 @@ export default function Portfolio() {
         offset: ["start end", "end start"]
     });
 
-    // 3. STRONG PARALLAX:
-    // Move from 0% to 50% down. This "drags" the background down as you scroll,
-    // creating a strong depth effect where stars feel far away.
-    const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
+    // Slower parallax - moves 25% down (slower than hero circle)
+    const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "25%"]);
 
     return (
         <section
