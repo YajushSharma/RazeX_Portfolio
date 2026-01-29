@@ -334,7 +334,7 @@
   font-weight: 400;
   letter-spacing: 0.3em;
   text-transform: uppercase;
-  color: rgba(249, 115, 22, 0.8);
+  color: rgba(249, 132, 22, 0.8);
 }
 
 .text-cinematic-subtitle {
@@ -402,8 +402,8 @@
 /* Orange Gradient Border Button */
 .btn-gradient-border {
   --deep-orange: #c2410c;
-  --hero-orange: #ff8656;
-  --bright-gold: #fbbf24;
+  --hero-orange: #ff6f56;
+  --bright-gold: #dd7514;
   --soft-coral: #fdba74;
 
   position: relative;
@@ -432,17 +432,34 @@
   background-size: 200%;
   animation: gradient-animate 3s infinite linear;
   filter: blur(20px);
-  opacity: 0.6;
+  opacity: 0.3;
   border-radius: 9999px;
 }
 
-.btn-gradient-border:hover {
-  transform: scale(1.02);
+/* Hover glow overlay - fades in/out smoothly */
+.btn-gradient-border::after {
+  content: '';
+  background: linear-gradient(90deg, var(--deep-orange), var(--hero-orange), var(--bright-gold), var(--soft-coral), var(--hero-orange), var(--deep-orange));
+  height: 50%;
+  width: 80%;
+  position: absolute;
+  bottom: -30%;
+  left: 10%;
+  z-index: -4;
+  background-size: 200%;
+  animation: gradient-animate 1.5s infinite linear;
+  filter: blur(30px);
+  opacity: 0;
+  border-radius: 9999px;
+  transition: opacity 0.5s ease-out;
 }
 
-.btn-gradient-border:hover,
-.btn-gradient-border:hover::before {
-  animation: gradient-animate 1.5s infinite linear;
+.btn-gradient-border:hover {
+  transform: scale(1.1);
+}
+
+.btn-gradient-border:hover::after {
+  opacity: 0.7;
 }
 
 @keyframes gradient-animate {
@@ -566,4 +583,164 @@ html.lenis body {
 
 .lenis.lenis-smooth {
   scroll-behavior: auto;
+}
+
+/* =========================================
+   8. MOBILE OPTIMIZATIONS
+   ========================================= */
+
+/* Reduce animations on mobile for performance */
+@media (max-width: 768px) {
+
+  /* Disable heavy glow card animations */
+  .glow-card::before,
+  .glow-card::after {
+    animation: none !important;
+    opacity: 0.3 !important;
+  }
+
+  /* Reduce parallax effects */
+  [style*="will-change"] {
+    will-change: auto !important;
+  }
+
+  /* Touch-friendly tap highlight */
+  a,
+  button {
+    -webkit-tap-highlight-color: rgba(249, 115, 22, 0.2);
+  }
+
+  /* Reduce glow effects */
+  :root {
+    --glow-opacity: 0.5;
+    --glow-blur: 3;
+  }
+
+  /* Simpler text gradients */
+  .text-gradient {
+    animation-duration: 6s !important;
+  }
+
+  /* Ensure touch targets */
+  a,
+  button,
+  [role="button"] {
+    min-height: 44px;
+  }
+}
+
+/* Reduce motion preference */
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* =========================================
+   9. TETROMINO DIVIDER ANIMATION
+   ========================================= */
+
+.tetrominos {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-56px, -48px);
+}
+
+.tetromino {
+  width: 48px;
+  height: 56px;
+  position: absolute;
+  transition: all ease .3s;
+  /* Orange-themed hexagon using inline SVG */
+  background: url('data:image/svg+xml;utf-8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 612 684"%3E%3Cpath fill="%230a0a0a" d="M305.7 0L0 170.9v342.3L305.7 684 612 513.2V170.9L305.7 0z"/%3E%3Cpath fill="%23f97316" d="M305.7 80.1l-233.6 131 233.6 131 234.2-131-234.2-131"/%3E%3C/svg%3E') no-repeat top center;
+}
+
+.box1 {
+  animation: tetromino1 1.5s ease-out infinite;
+}
+
+.box2 {
+  animation: tetromino2 1.5s ease-out infinite;
+}
+
+.box3 {
+  animation: tetromino3 1.5s ease-out infinite;
+  z-index: 2;
+}
+
+.box4 {
+  animation: tetromino4 1.5s ease-out infinite;
+}
+
+@keyframes tetromino1 {
+
+  0%,
+  40% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(24px, -13px);
+  }
+
+  60%,
+  100% {
+    transform: translate(48px, 0);
+  }
+}
+
+@keyframes tetromino2 {
+
+  0%,
+  20% {
+    transform: translate(48px, 0);
+  }
+
+  40%,
+  100% {
+    transform: translate(72px, 13px);
+  }
+}
+
+@keyframes tetromino3 {
+  0% {
+    transform: translate(72px, 13px);
+  }
+
+  20%,
+  60% {
+    transform: translate(48px, 26px);
+  }
+
+  90%,
+  100% {
+    transform: translate(24px, 13px);
+  }
+}
+
+@keyframes tetromino4 {
+
+  0%,
+  60% {
+    transform: translate(24px, 13px);
+  }
+
+  90%,
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+/* Smaller on mobile */
+@media (max-width: 768px) {
+  .tetrominos {
+    transform: translate(-36px, -32px) scale(0.75);
+  }
 }

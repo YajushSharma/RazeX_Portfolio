@@ -22,15 +22,21 @@ export default function SpaceshipReveal({ children }: SpaceshipRevealProps) {
     const vignetteRef = useRef<HTMLDivElement>(null);
     const scrollIndicatorRef = useRef<HTMLDivElement>(null);
 
+    // Detect mobile for reduced scroll distance and touch interactions
+    const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
+
     useEffect(() => {
         const ctx = gsap.context(() => {
+            // Shorter scroll on mobile for performance
+            const scrollEnd = isMobile ? "+=100%" : "+=150%";
+
             const tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: containerRef.current,
                     start: "top top",
-                    end: "+=150%",
+                    end: scrollEnd,
                     pin: true,
-                    scrub: 1,
+                    scrub: isMobile ? 0.5 : 1,
                     // markers: true, // Uncomment for debugging
                 },
             });
@@ -152,28 +158,31 @@ export default function SpaceshipReveal({ children }: SpaceshipRevealProps) {
                 </svg>
             </div>
 
-            {/* Centered Start Text - clickable to jump to hero */}
+            {/* Centered Start Text - tap/click to jump to hero */}
             <div className="start-text-container absolute inset-0 z-[45] flex items-center justify-center pointer-events-none">
                 <a
                     href="#home"
                     onClick={(e) => {
                         e.preventDefault();
+                        // Faster on mobile, cinematic on desktop
+                        const scrollTarget = isMobile ? window.innerHeight : window.innerHeight * 1.5;
+                        const duration = isMobile ? 2.0 : 2.5;
                         gsap.to(window, {
-                            scrollTo: { y: window.innerHeight * 1.5, autoKill: false },
-                            duration: 2.5,
+                            scrollTo: { y: scrollTarget, autoKill: false },
+                            duration: duration,
                             ease: "power2.inOut"
                         });
                     }}
-                    // CHANGE: Increased -translate-y-6 to -translate-y-32
-                    className="pointer-events-auto group flex flex-col items-center gap-2 cursor-pointer -translate-y-32"
+                    className="pointer-events-auto group flex flex-col items-center gap-3 cursor-pointer -translate-y-24 md:-translate-y-32 translate-x-[15px] p-6 min-w-[120px] min-h-[80px]"
                 >
-                    <span className="text-white/40 text-xs tracking-[0.3em] uppercase font-light group-hover:text-white/70 transition-colors duration-300">
-                        Click to
+                    <span className="text-white/40 text-xs tracking-[0.3em] uppercase font-light group-hover:text-white/70 group-active:text-accent-orange/70 transition-colors duration-300">
+                        <span className="md:hidden">Tap to</span>
+                        <span className="hidden md:inline">Click to</span>
                     </span>
-                    <span className="text-white/60 text-sm md:text-base tracking-[0.2em] uppercase font-medium group-hover:text-accent-orange transition-colors duration-300">
+                    <span className="text-white/60 text-sm md:text-base tracking-[0.2em] uppercase font-medium group-hover:text-accent-orange group-active:text-accent-orange transition-colors duration-300">
                         Begin Journey
                     </span>
-                    <div className="w-8 h-[1px] bg-gradient-to-r from-transparent via-white/30 to-transparent group-hover:via-accent-orange/50 transition-all duration-300" />
+                    <div className="w-8 h-[1px] bg-gradient-to-r from-transparent via-white/30 to-transparent group-hover:via-accent-orange/50 group-active:via-accent-orange/70 transition-all duration-300" />
                 </a>
             </div>
             {/* Spaceship Window Overlay */}

@@ -133,8 +133,12 @@ function VideoCard({ index, title, category }: VideoCardProps) {
     const videoRef = useRef<HTMLVideoElement>(null);
     const cardRef = useRef<HTMLDivElement>(null);
     const [isVisible, setIsVisible] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
 
     useEffect(() => {
+        // Detect mobile
+        setIsMobile(window.innerWidth < 768);
+
         const observer = new IntersectionObserver(
             (entries) => {
                 entries.forEach((entry) => {
@@ -149,20 +153,21 @@ function VideoCard({ index, title, category }: VideoCardProps) {
             },
             {
                 root: null,
-                // Tighter zone: video must be in center 30% of screen to be "active"
-                rootMargin: "-35% 0px -35% 0px",
-                // Trigger when 50% of the video is visible in the zone
-                threshold: 0.5
+                // Wider zone on mobile for easier activation
+                rootMargin: isMobile ? "-25% 0px -25% 0px" : "-35% 0px -35% 0px",
+                threshold: isMobile ? 0.3 : 0.5
             }
         );
 
         if (cardRef.current) observer.observe(cardRef.current);
         return () => observer.disconnect();
-    }, []);
+    }, [isMobile]);
 
-    // Click to scroll video to center
+    // Click to scroll video to center - DISABLED on mobile
     const handleVideoClick = () => {
-        cardRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
+        if (!isMobile) {
+            cardRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
+        }
     };
 
     return (
