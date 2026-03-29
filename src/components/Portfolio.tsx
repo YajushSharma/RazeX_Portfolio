@@ -137,7 +137,8 @@ function VideoCard({ index, title, category }: VideoCardProps) {
 
     useEffect(() => {
         // Detect mobile
-        setIsMobile(window.innerWidth < 768);
+        const mobile = window.innerWidth < 768;
+        setIsMobile(mobile);
 
         const observer = new IntersectionObserver(
             (entries) => {
@@ -153,15 +154,15 @@ function VideoCard({ index, title, category }: VideoCardProps) {
             },
             {
                 root: null,
-                // Wider zone on mobile for easier activation
-                rootMargin: isMobile ? "-25% 0px -25% 0px" : "-35% 0px -35% 0px",
-                threshold: isMobile ? 0.3 : 0.5
+                // Use a small rootMargin so the trigger zone works on all aspect ratios (16:9, 21:9, etc.)
+                rootMargin: mobile ? "-10% 0px -10% 0px" : "-15% 0px -15% 0px",
+                threshold: 0.2
             }
         );
 
         if (cardRef.current) observer.observe(cardRef.current);
         return () => observer.disconnect();
-    }, [isMobile]);
+    }, []);
 
     // Click to scroll video to center - DISABLED on mobile
     const handleVideoClick = () => {
